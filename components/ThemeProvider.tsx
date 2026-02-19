@@ -21,11 +21,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem("colorTheme") as ThemeName | null;
     const savedMode = localStorage.getItem("themeMode") as Mode | null;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setThemeState(savedTheme || "forest");
-    setMode(savedMode || (prefersDark ? "dark" : "light"));
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    const initialMode = savedMode || (prefersDark ? "dark" : "light");
+    setMode(initialMode);
+    // Automatically set theme based on mode
+    setThemeState(initialMode === "dark" ? "midnight" : "forest");
   }, []);
 
   useEffect(() => {
@@ -42,7 +45,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleMode = () => {
     const newMode = mode === "light" ? "dark" : "light";
     setMode(newMode);
+    // Automatically set theme based on new mode
+    const newTheme = newMode === "dark" ? "midnight" : "forest";
+    setThemeState(newTheme);
     localStorage.setItem("themeMode", newMode);
+    localStorage.setItem("colorTheme", newTheme);
   };
 
   return (

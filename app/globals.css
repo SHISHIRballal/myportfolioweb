@@ -68,26 +68,26 @@
   --accent-foreground: #052e16;
 }
 
-/* Midnight - Deep purple/violet */
+/* Midnight - Dark Blue Black (Modern Tech/Cyberpunk) */
 [data-theme="midnight"] {
-  --background: #faf5ff;
-  --foreground: #3b0764;
-  --primary: #7c3aed;
-  --primary-foreground: #ffffff;
-  --secondary: #f5f3ff;
-  --secondary-foreground: #4c1d95;
-  --accent: #8b5cf6;
-  --accent-foreground: #ffffff;
+  --background: #0a0f1c;
+  --foreground: #e6edf3;
+  --primary: #58a6ff;
+  --primary-foreground: #0a0f1c;
+  --secondary: #161b22;
+  --secondary-foreground: #8b949e;
+  --accent: #39d0d8;
+  --accent-foreground: #0a0f1c;
 }
 [data-theme="midnight"].dark {
-  --background: #1e1b4b;
-  --foreground: #e9d5ff;
-  --primary: #a78bfa;
-  --primary-foreground: #1e1b4b;
-  --secondary: #4c1d95;
-  --secondary-foreground: #ddd6fe;
-  --accent: #c4b5fd;
-  --accent-foreground: #1e1b4b;
+  --background: #010409;
+  --foreground: #e6edf3;
+  --primary: #58a6ff;
+  --primary-foreground: #010409;
+  --secondary: #161b22;
+  --secondary-foreground: #8b949e;
+  --accent: #39d0d8;
+  --accent-foreground: #010409;
 }
 
 /* Rose - Soft pink */
@@ -148,9 +148,13 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 @layer utilities {
